@@ -1,4 +1,4 @@
-package zjoffer
+package zj009_用两个展实现队列
 
 type Stack struct {
 	Values [] int
