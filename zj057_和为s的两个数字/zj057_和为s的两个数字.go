@@ -1,4 +1,4 @@
-package zjoffer
+package zj057_和为s的两个数字
 
 //输入：nums = [2,7,11,15], target = 9
 //输出：[2,7] 或者 [7,2]
