@@ -1,17 +1,20 @@
 package zj033_二叉搜索树的后序遍历序列
 
 func verifyPostorder(postorder []int) bool {
-	if len(postorder) == 0 {
+	if len(postorder) < 1 {
 		return true
 	}
 	root_value := postorder[len(postorder)-1]
-	piv := getBGvalue(root_value, postorder[:len(postorder)-1])
-	left := postorder[0:piv]
-	right := postorder[piv : len(postorder)-1]
-	if !isRightBGLeft(left, right, root_value) {
-		return false
+	index := len(postorder) - 1
+	for idx := 0; idx < len(postorder)-1; idx++ {
+		if index == len(postorder)-1 && postorder[idx] > root_value {
+			index = idx
+		}
+		if index != len(postorder)-1 && postorder[idx] < root_value {
+			return false
+		}
 	}
-	return verifyPostorder(left) && verifyPostorder(right)
+	return verifyPostorder(postorder[0:index]) && verifyPostorder(postorder[index:len(postorder)-1])
 }
 
 //
