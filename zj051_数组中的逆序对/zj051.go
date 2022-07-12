@@ -17,9 +17,6 @@ func reversePairs2(nums []int) int {
 	}
 	return dp[len(nums)-1]
 }
-func reversePairs(nums []int) int {
-	nums := quicksort(nums, 0, len(nums)-1)
-}
 
 func getLeastNumbers(arr []int, k int) []int {
 	if len(arr) == 0 || k == 0 {

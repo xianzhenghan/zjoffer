@@ -16,7 +16,7 @@ func NthUglyNumber(n int) int {
 		if dp[i] == dp[index3]*3 {
 			index3++
 		}
-		if dp[i] == dp[index5] {
+		if dp[i] == dp[index5]*5 {
 			index5++
 		}
 	}

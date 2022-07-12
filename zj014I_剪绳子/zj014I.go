@@ -20,11 +20,9 @@ func cuttingRope2(n int) int {
 	if n == 0 {
 		return 0
 	}
-
 	if n == 1 || n == 2 {
 		return 1
 	}
-
 	dp := make([]int, n+1)
 	for i := 3; i < n+1; i++ {
 		for j := 0; j < i; j++ {
