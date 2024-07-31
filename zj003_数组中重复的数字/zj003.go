@@ -1,5 +1,7 @@
 package zj003_数组中重复的数字
 
+import "fmt"
+
 // 使用哈希表
 func findRepeatNumber(nums []int) int {
 	m := make(map[int]int, 0)
@@ -15,7 +17,7 @@ func findRepeatNumber(nums []int) int {
 }
 
 // 原地交换， 时间O(n), 空间O(1) 比较理想的解法
-func findRepeatNumber2(nums []int) int {
+func FindRepeatNumber2(nums []int) int {
 	// 原地交换， 时间O(n), 空间O(1)
 	length := len(nums)
 	i := 0
@@ -32,6 +34,7 @@ func findRepeatNumber2(nums []int) int {
 		}
 		// 不等，交换两值
 		nums[nums[i]], nums[i] = nums[i], nums[nums[i]]
+		fmt.Println(nums)
 	}
 	return -1
 }
