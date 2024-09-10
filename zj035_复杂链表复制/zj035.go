@@ -1,4 +1,4 @@
-package zj035_复杂链表的服装
+package zj035_复杂链表复制
 
 type Node struct {
 	Val    int
@@ -7,7 +7,7 @@ type Node struct {
 }
 
 // 方法一：hashmap，map中存的是（原节点->新节点）的映射关系
-// 时间复杂度：O(n) 2次遍历
+// 时间复杂度：O(n) 2次遍历0
 // 空间复杂度：O(n)
 func copyRandomList(head *Node) *Node {
 	if head == nil {

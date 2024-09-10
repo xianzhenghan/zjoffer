@@ -4,8 +4,8 @@ import (
 	"fmt"
 )
 
-//输入: nums = [1,3,-1,-3,5,3,6,7], 和 k = 3
-//输出: [3,3,5,5,6,7]
+// 输入: nums = [1,3,-1,-3,5,3,6,7], 和 k = 3
+// 输出: [3,3,5,5,6,7]
 func maxSlidingWindow2(nums []int, k int) []int {
 	if len(nums) == 0 {
 		return []int{}
@@ -19,8 +19,8 @@ func maxSlidingWindow2(nums []int, k int) []int {
 	return dp
 }
 
-//输入: nums = [1,3,-1,-3,5,3,6,7], 和 k = 3
-//输出: [3,3,5,5,6,7]
+// 输入: nums = [1,3,-1,-3,5,3,6,7], 和 k = 3
+// 输出: [3,3,5,5,6,7]
 func maxSlidingWindow(nums []int, k int) []int {
 	if len(nums) == 0 {
 		return []int{}

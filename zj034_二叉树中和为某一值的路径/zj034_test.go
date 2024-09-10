@@ -20,6 +20,6 @@ func TestPath(t *testing.T) {
 		},
 		Right: nil,
 	}
-	r := PathSum(tree, 12)
+	r := pathTarget(tree, 12)
 	fmt.Printf("r=%v", r)
 }

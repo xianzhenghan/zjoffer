@@ -3,6 +3,7 @@ package zj034_二叉树中和为某一值的路径
 import (
 	"container/list"
 	"fmt"
+	"slices"
 )
 
 type TreeNode struct {
@@ -94,4 +95,46 @@ func getSlice(li list.List, target int) []int {
 	} else {
 		return []int{}
 	}
+}
+
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+
+func pathTarget(root *TreeNode, target int) [][]int {
+	if root == nil {
+		return [][]int{}
+	}
+	var ans = make([][]int, 0)
+	sli := make([]int, 0)
+	return DspTarget(root, target, sli, &ans)
+}
+
+func DspTarget(root *TreeNode, target int, sli []int, ans *[][]int) [][]int {
+	sli = append(sli, root.Val)
+	sli1 := slices.Clone(sli)
+	if root.Left == nil && root.Right == nil && getSliceSum(sli1, target) {
+		*ans = append(*ans, sli1)
+	}
+	if root.Left != nil {
+		DspTarget(root.Left, target, sli1, ans)
+	}
+
+	if root.Right != nil {
+		DspTarget(root.Right, target, sli1, ans)
+	}
+	return *ans
+}
+
+func getSliceSum(sli []int, target int) bool {
+	sum := 0
+	for _, v := range sli {
+		sum += v
+	}
+	return sum == target
 }

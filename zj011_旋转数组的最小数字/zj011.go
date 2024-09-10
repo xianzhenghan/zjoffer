@@ -24,16 +24,21 @@ func minArray(numbers []int) int {
 	return -1
 }
 
-func minArrayDemo(numbers []int) int {
-	left := 0
-	right := len(numbers) - 1
-	for left < right {
-		mid := left + (right-left)>>1
-		if numbers[mid] > numbers[right] {
-			left = mid + 1
-		} else if numbers[mid] <= numbers[right] {
-			right = right - 1
-		}
+func findMin(nums []int) int {
+	if len(nums) == 1 {
+		return nums[0]
 	}
-	return numbers[left]
+	left, right, mid := 0, len(nums)-1, 0
+	for left < right {
+		mid = (left + right) / 2
+		if nums[mid] > nums[right] {
+			left = mid + 1
+		} else if nums[mid] < nums[right] {
+			right = mid
+		} else {
+			right--
+		}
+
+	}
+	return nums[left]
 }
