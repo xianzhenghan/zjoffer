@@ -37,18 +37,3 @@ func minArrayDemo(numbers []int) int {
 	}
 	return numbers[left]
 }
-
-func minArrayFast(numbers []int) int {
-	f, e := 0, len(numbers)-1
-	for f <= e {
-		mid := f + (e-f)/2
-		if numbers[mid] > numbers[e] {
-			f = mid + 1
-		} else if numbers[mid] < numbers[e] {
-			e = mid
-		} else {
-			e--
-		}
-	}
-	return numbers[f]
-}

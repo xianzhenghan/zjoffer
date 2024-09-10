@@ -10,3 +10,15 @@ func fib(n int) int {
 	}
 	return sli[n]
 }
+
+func fib2(n int) int {
+	if n < 2 {
+		return n
+	}
+	prepre, pre := 0, 1
+	nums := 2
+	for nums <= n {
+		prepre, pre = pre, pre+prepre
+	}
+	return pre
+}

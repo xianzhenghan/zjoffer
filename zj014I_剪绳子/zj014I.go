@@ -26,15 +26,8 @@ func cuttingRope2(n int) int {
 	dp := make([]int, n+1)
 	for i := 3; i < n+1; i++ {
 		for j := 0; j < i; j++ {
-			dp[i] = max(dp[i], max(j*(i-j), j*dp[i-j]))
+			dp[i] = int(math.Max(float64(dp[i]), math.Max(float64(j*(i-j)), float64(j*dp[i-j]))))
 		}
 	}
 	return dp[n]
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
